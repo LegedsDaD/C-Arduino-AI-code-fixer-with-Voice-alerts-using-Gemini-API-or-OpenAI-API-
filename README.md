@@ -1,2 +1,16 @@
-# C-Arduino-AI-code-fixer-with-Voice-alerts-using-Gemini-API-or-OpenAI-API-
-An AI C++ code fixer
+🤖 Arduino AI Code Fixer with Voice Alerts🌟 OverviewThe Arduino AI Code Fixer is a desktop application designed to streamline the Arduino development process by providing real-time, AI-powered code analysis and voice-based error alerts.It continuously monitors a specified Arduino source file and, upon detecting changes, instantly sends the code to a Large Language Model (LLM) for review, receiving suggestions, fixes, and explanations. To keep your workflow fast and hands-free, all critical information is communicated via a customizable text-to-speech (TTS) voice alert.Key FeaturesDual-API Support: Easily switch between two powerful AI backends: Google's Gemini API (Gemini.py) and OpenAI's API (Open AI.py).Real-Time File Monitoring: Utilizes a 1-second polling interval (CHECK_INTERVAL_MS) to detect saves and changes in your Arduino code file (e.g., a .ino file).Voice Alerts (TTS): Provides instant, spoken feedback for fixes and errors using the edge_tts library and pygame.Customizable Voice: Select your preferred TTS voice from a dropdown list within the GUI.Intuitive GUI: A simple interface built with tkinter allows for easy setup of the API key, voice, and file selection.🛠️ InstallationPrerequisitesYou need Python 3.x installed on your system.StepsClone the Repository:Bashgit clone https://github.com/LegedsDaD/C-Arduino-AI-code-fixer-with-Voice-alerts-using-Gemini-API-or-OpenAI-API-.git
+cd C-Arduino-AI-code-fixer-with-Voice-alerts-using-Gemini-API-or-OpenAI-API-
+Install Dependencies:The project relies on external libraries for AI communication and text-to-speech.Bashpip install google-genai openai edge-tts pygame
+⚙️ Configuration & SetupYou must choose which AI model to use and configure your API key within the respective Python file.1. Select Your APIChoose one of the following files to run the application:File NameAI BackendRequired KeyGemini.pyGoogle Gemini APIGEMINI_API_KEYOpen AI.pyOpenAI APIOPENAI_API_KEY2. Set Your API KeyOpen the chosen file (Gemini.py or Open AI.py) and replace the placeholder with your actual API key.Gemini.py example:Python# ---------------- SETTINGS ----------------
+# !!! REPLACE WITH YOUR ACTUAL GEMINI API KEY !!!
+GEMINI_API_KEY = "YOUR_ACTUAL_GEMINI_API_KEY_HERE"
+CHECK_INTERVAL_MS = 1000 # 1 second polling for real-time detection
+Open AI.py example:Python# ---------------- SETTINGS ----------------
+OPENAI_API_KEY = "YOUR_ACTUAL_OPENAI_API_KEY_HERE"
+CHECK_INTERVAL_MS = 1000  # 1 second polling for real-time detection
+🚀 UsageRun the Application:Execute the Python script for your desired AI backend:Bash# For Gemini API
+python "Gemini.py"
+
+# OR for OpenAI API
+python "Open AI.py"
+Configure Voice:In the GUI, use the "Select Voice" dropdown to choose a voice (e.g., en-US-JennyNeural).Click the "Set Voice" button.Start Monitoring:Click the "Start Monitoring" button.A file dialog will open. Select the Arduino source file (e.g., MySketch.ino) you want the AI to monitor.Develop and Listen:Continue writing your Arduino code in your preferred editor.Save the file.The application will send the saved code to the AI. If the AI detects an error or suggests a fix, you will hear a voice alert with the AI's explanation.A separate control dialog will appear, allowing you to Stop or Change File being monitored.🤝 ContributingContributions are welcome! If you have suggestions for new features, code improvements, or bug fixes, please open an issue or submit a pull request.⚖️ LicenseThis project is licensed under the MIT License. See the repository for details.
